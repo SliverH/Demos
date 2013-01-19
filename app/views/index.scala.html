@@ -1,7 +1,40 @@
-@(message: String)
+@(tasks: List[Task], taskForm: Form[Task])
 
-@main("Welcome to Play 2.0") {
-    
-    @play20.welcome(message, style = "Java")
-    
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Play Demo") {
+
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<legend>@tasks.size() task(s)</legend>
+				<ul>
+        			@for(task <- tasks) {
+            			<li>
+                			@task.label
+                			@form(routes.Application.deleteTask(task.id)) {
+								<button type="submit" class="btn">Delete</button>
+                			}
+            			</li>
+        			}
+    			</ul>
+    			
+				<legend>Add new task</legend>		
+				@form(routes.Application.newTask()) {
+					@inputText(taskForm("label"), '_label -> "Task", 'placeholder -> "Type the task's name…")
+        			<button type="submit" class="btn">Create</button>     
+    			}
+				
+			</div>
+		</div>
+	
+		<hr>
+	
+		<footer>
+			<p>&copy; Company 2012</p>
+		</footer>
+	
+	</div>
+
 }
