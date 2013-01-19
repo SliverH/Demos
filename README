@@ -1,0 +1,13 @@
+Demo de play! con Java
+
+Primero denle fork al proyecto.
+
+Para correrlo deben bajar play de aquí: http://download.playframework.org/releases/play-2.0.4.zip
+
+Ya que bajaron play, abran una ventana de la terminal y vayan al directorio en donde forkearon el proyecto, luego ejecuten el script de play, lo que va a iniciar la consola de play.
+
+Una vez que están dentro de la consola de play, escriban run, y denle enter pa que inicie el servidor.
+
+Ya que está corriendo el servidor, en un browser vayan a localhost:9000 para ver la aplicación corriendo.
+
+Chequen la documentación de play http://www.playframework.org/documentation/2.0.4/Home
